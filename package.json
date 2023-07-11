@@ -4,11 +4,14 @@
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "browser": "dist/index.iife.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "repository": {
+    "url": "https://github.com/MarcusTHellams/mth-yup-proper-length-validation"
+  },
+  "homepage": "https://github.com/MarcusTHellams/mth-yup-proper-length-validation",
   "scripts": {
     "build": "tsup",
     "dev": "tsc-watch --onSuccess \"ts-node src/index.ts\"",
@@ -18,7 +21,9 @@
     "test": "vitest --reporter=verbose",
     "test:ci": "vitest run --reporter=verbose",
     "test:coverage": "vitest --watch=false --silent --coverage --reporter=verbose",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublish": "yarn lint && yarn test:ci && yarn build",
+    "publish": "npm publish --access=public"
   },
   "keywords": [],
   "author": "Marcus Hellams",

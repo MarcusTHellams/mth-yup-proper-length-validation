@@ -1,8 +1,5 @@
 import * as yup from 'yup';
 
-export * from './math';
-
-
 export const yupProperLengthValidation = (length: number, message?: yup.Message) => {
   const lengthValidation = [
     'lengthValidation',
